@@ -1,0 +1,38 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #000000; /* Couleur de fond */
+    background-image: url('wallpaper\ L.jpg'); /* Image de fond */
+    background-size: cover; /* Ajuster l'image à la taille de la fenêtre */
+    background-repeat: no-repeat; /* Ne pas répéter l'image */
+    margin: 0; /* Supprime la marge par défaut */
+    padding: 20px; /* Ajoute un espace de 20 pixels à l'intérieur du body */
+}
+
+#game-container {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.5); /* Couleur de fond semi-transparente */
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    border: 2px solid #555;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); /* Ombre légère */
+}
+
+button:hover {
+    background-color: #555;
+}

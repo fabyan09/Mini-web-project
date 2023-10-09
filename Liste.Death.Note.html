@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des épisodes de Death Note</title>
+    <style>
+        /* CSS amélioré pour une mise en page magnifique */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #ff6600, #0073e6);
+    background-size: 400% 400%;
+    animation: gradient 7s infinite alternate;
+}
+
+div {
+    cursor:url(cursor-apple.cur),auto;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+h1 {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    text-align: middle;
+    margin-bottom: 20px;
+    font-size: 24px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+h1:hover {
+    background-color: #555;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+li {
+    background-color: #fff;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: calc(33.33% - 20px); /* Répartit en trois colonnes avec un espace de 20px */
+    min-width: 300px;
+    text-align: center;
+    transform-style: preserve-3d;
+    transition: transform 0.2s ease-in-out;
+}
+
+li:hover {
+    transform: scale(1.05) rotate(3deg);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre portée personnalisée */
+}
+
+h2 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Style de la barre de recherche */
+.search-container {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#searchInput {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#searchInput:focus {
+    transform: translateY(-5px);
+}
+
+/* Style pour les liens de streaming (ajoutez des styles pour les liens) */
+a {
+    color: #0073e6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Style pour le pied de page (ajoutez un pied de page si nécessaire) */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Style pour les liens de réseaux sociaux */
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+.social-links a:hover {
+    color: #0073e6; /* Couleur au survol */
+}
+
+#logo {
+    vertical-align: text-top;
+}
+
+#bio {
+    text-align: left;
+    color: #ccc;
+    vertical-align: bottom;
+}
+
+#blabla {
+    color: #ccc;
+    text-align: left;
+}
+
+.social-links #snap:hover{
+    color: #bde606;
+}
+
+.social-links #instagram:hover {
+    color: #e60689;
+}
+
+.social-links #discordo:hover {
+    color: #bf6ff5;
+}
+
+.social-links #github:hover {
+    color: #06e66b;
+}
+
+.social-links #tel:hover {
+    color: #24d5f5;
+}
+
+.social-links #mail:hover {
+    color: #ff5252;
+}
+
+/* Style pour le menu de navigation */
+.menu {
+    background-color: #333;
+    color: #330b0b;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <ul>
+                <li><a href="#episodes">Épisodes</a></li>
+                <li><a href="#bio">À propos</a></li>
+                <li><a id="jeu" href="Jeu.html">Petit jeu codé par mes soins ;-)</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Liste des épisodes de <img id='logo' src = "images.png" alt="Logo Death Note" width="200" height="40"></h1>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Rechercher un épisode...">
+        </div>
+    <script>
+        // Fonction de recherche
+        function searchEpisodes() {
+         // Récupérer la valeur saisie dans la barre de recherche
+            var input = document.getElementById('searchInput');
+            var filter = input.value.toUpperCase();
+
+            // Récupérer la liste des épisodes
+            var episodes = document.querySelectorAll('li');
+
+           // Parcourir la liste des épisodes
+            for (var i = 0; i < episodes.length; i++) {
+            var episode = episodes[i];
+            var h2 = episode.querySelector('h2');
+
+            // Comparer le texte de l'épisode avec la valeur de recherche (en majuscules)
+            if (h2.textContent.toUpperCase().indexOf(filter) > -1) {
+                episode.style.display = ''; // Afficher l'épisode si la correspondance est trouvée
+            } else {
+                episode.style.display = 'none'; // Masquer l'épisode sinon
+            }
+        }
+    }
+
+    // Ajouter un gestionnaire d'événement pour déclencher la recherche lors de la saisie
+    var searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('keyup', searchEpisodes);
+
+</script>
+    <ul id="episodes">
+        <li>
+            <h2 class="rainbow-text">Épisode 1 : Renaissances</h2>
+            <p>Light Yagami, un étudiant modèle, découvre un mystérieux carnet appelé Death Note qui lui permet de tuer n'importe qui dont il connaît le nom. Il décide de l'utiliser pour éliminer les criminels du monde.</p>
+        </li>
+        <li>
+            <h2 class="rainbow-text">Épisode 2 : Confrontation</h2>
+            <p>Light continue d'utiliser le Death Note pour éliminer les criminels et attire l'attention des médias et de la police. L'énigmatique détective L est chargé de l'attraper.</p>
+        </li>
+        <li>
+            <h2 class="rainbow-text">Épisode 3 : Dilemme</h2>
+            <p>L commence à enquêter sur Kira, le nom donné par le public à l'auteur des meurtres. Light est confronté à un dilemme lorsque sa propre famille est menacée.</p>
+        </li>
+        <li>
+            <h2 class="rainbow-text">Épisode 4 : Tactiques</h2>
+            <p>La confrontation entre Light et L s'intensifie alors qu'ils tentent de découvrir l'identité de l'autre. Light utilise des tactiques pour déjouer L.</p>
+        </li>
+        <li>
+            <h2 class="rainbow-text">Épisode 5 : Détournement</h2>
+            <p>Light se rapproche de sa petite amie, Misa Amane, qui possède un Death Note. Ils forment une alliance pour éliminer les ennemis de Kira.</p>
+        </li>
+        <li>
+            <h2 class="rainbow-text">Épisode 6 : Perplexité</h2>
+            <p>L découvre des informations sur Kira qui le laissent perplexe. Pendant ce temps, Light continue de manipuler Misa pour atteindre ses objectifs.</p>
+        </li>
+        <li>
+            <h2 class="rainbow-text">Épisode 7 : Impatience</h2>
+            <p>Les enquêtes de L se rapprochent de la vérité, ce qui rend Light impatient. Il doit être prudent pour ne pas révéler son identité.</p>
+        </li>
+        <li>
+            <h2 class="rainbow-text">Épisode 8 : Gloutonnerie</h2>
+            <p>L découvre que Kira a besoin du nom et du visage de la personne pour la tuer. Les enquêteurs tentent de trouver un moyen de piéger Kira.</p>
+        </li>
+        <li>
+            <h2 class="rainbow-text">Épisode 9 : Manipulation</h2>
+            <p>Light manipule Rem, le Shinigami, pour éliminer L. La tension monte alors que les deux cerveaux s'affrontent.</p>
+        </li>
+        <li>
+            <h2 class="rainbow-text">Épisode 10 : Le suspect</h2>
+            <p>Light se rapproche de son objectif d'éliminer L, mais Misa Amane est arrêtée et devient un suspect majeur. La tension monte alors que les enquêtes se poursuivent.</p>
+        </li>
+        <li>
+            <h2 class="rainbow-text">Épisode 11 : Heureux Noël</h2>
+            <p>Light utilise le Death Note pour manipuler un détective et tenter de se débarrasser de L. Cependant, L reste vigilant et continue ses enquêtes.</p>
+        </li>
+        <li>
+            <h2 class="rainbow-text">Épisode 12 : Amour</h2>
+            <p>Light et Misa se rapprochent, mais les choses se compliquent lorsque L découvre que Kira a des liens avec la police. Light doit agir avec précaution pour protéger son identité.</p>
+        </li>
+        <li>
+            <h2 class="rainbow-text">Épisode 13 : Confession</h2>
+            <p>Light est confronté à un choix difficile lorsque L l'interroge et le pousse à révéler des informations cruciales. La bataille entre les deux cerveaux continue.</p>
+        </li>
+        <li>
+            <h2 class="rainbow-text">Épisode 14 : Amour</h2>
+            <p>Les plans de Light et Misa sont contrariés lorsque L les surveille de près. Ils doivent redoubler d'efforts pour maintenir leur couverture.</p>
+        </li>
+        <li>
+            <h2 class="rainbow-text">Épisode 15 : Confession</h2>
+            <p>La tension monte entre Light et L alors qu'ils se méfient l'un de l'autre. Light doit trouver un moyen de se débarrasser de L une fois pour toutes.</p>
+        </li>
+        <li>
+            <h2 class="rainbow-text">Épisode 16 : Résolution</h2>
+            <p>Light intensifie ses efforts pour éliminer L. La confrontation atteint son point culminant avec des conséquences dramatiques.</p>
+        </li>
+        <li>
+            <h2 class="rainbow-text">Épisode 17 : Exécution</h2>
+            <p>Light est sur le point de réussir, mais L a un dernier plan en réserve. Les deux adversaires s'engagent dans un dernier affrontement.</p>
+        </li>
+        <li>
+            <h2 class="rainbow-text">Épisode 18 : Allégeance</h2>
+            <p>Après la disparition de L, Light prend la tête de l'équipe d'enquêteurs. Cependant, de nouveaux adversaires surgissent et remettent en question sa suprématie.</p>
+        </li>
+        <li>
+            <h2 class="rainbow-text">Épisode 19 : Matériel</h2>
+            <p>Light rencontre Near et Mello, les successeurs de L. La bataille pour le Death Note continue avec de nouvelles règles et de nouveaux joueurs.</p>
+        </li>
+        <li>
+            <h2 class="rainbow-text">Épisode 20 : Succession</h2>
+            <p>Near et Mello se lancent dans une lutte acharnée contre Kira. Light doit rivaliser avec ces deux nouveaux détectives pour préserver son pouvoir.</p>
+        </li>
+        <li>
+            <h2 class="rainbow-text">Épisode 21 : Désistance</h2>
+            <p>La tension monte alors que Near et Mello se rapprochent de la vérité. Light est contraint de prendre des mesures extrêmes pour échapper à la capture.</p>
+        </li>
+        <li>
+            <h2 class="rainbow-text">Épisode 22 : Échec</h2>
+            <p>Les plans de Light échouent, et il est contraint de faire face aux conséquences de ses actes. La bataille pour le Death Note entre dans sa phase finale.</p>
+        </li>
+        <li>
+            <h2 class="rainbow-text">Épisode 23 : Présomption</h2>
+            <p>Light est exposé en tant que Kira, mais il continue de nier. Near et Mello s'unissent pour tenter de le vaincre une fois pour toutes.</p>
+        </li>
+        <li>
+            <h2 class="rainbow-text">Épisode 24 : Dissolution</h2>
+            <p>La confrontation finale entre Light et Near approche à grands pas. Les enjeux sont plus élevés que jamais dans cette lutte pour le Death Note.</p>
+        </li>
+        <li>
+            <h2 class="rainbow-text">Épisode 25 : Révélation</h2>
+            <p>La vérité éclate au grand jour alors que Light est confronté à ses actions et à la justice. La conclusion épique de "Death Note" se dévoile.</p>
+        </li>
+        <li>
+            <h2 class="rainbow-text">Épisode 26 : Résurrection</h2>
+            <p>Après un événement choquant, la série se termine avec un épilogue qui révèle le destin des personnages principaux.</p>
+        </li>
+    </ul>
+    <footer class="footer">
+        <div class="social-links">
+            <h2 id ="bio">A propos de moi :</h2>
+            <p id = "blabla">Je m'appelle GERBAUD Fabrice, j'ai 17 ans et je suis passionné d'informatique et de développement depuis quelques années.
+                Je compte en faire mon métier et j'espère un jour devenir full-stack. 
+                Actuellement je suis étudiant en Alternance à l'<a id="IUT" href="https://iut.univ-cotedazur.fr">IUT de Nice (Sophia-Antipolis)</a> où je suis une formation BUT Informatique sur 3 ans.
+                Etant donné que ma formation se déroule en alternance, je travaille aussi une semaine sur deux à <a id="realsoft" href="https://realsoft-cloud.fr/sous-domaine/wp/">Realsoft Informatique</a>, à Mougins.
+                Je suis encore débutant mais je maitrîse déjà certains langages et j'en connais plus ou moins d'autres tels que le Python, le PHP, le C, le SQL, le HTML, le CSS et le JS.
+                J'ai encore beaucoup de choses à apprendre mais cela ne me fait pas peur et je compte bien continuer à pleinement m'investir
+                dans mes études comme je le fais déjà.
+            </p>
+            <a id="tel">Téléphone</a>
+            <a id="mail">Mail</a>
+            <a id="linkedin" href="https://www.linkedin.com/in/gerbaud-fabrice-578bb7272/" target="_blank">LinkedIn</a>
+            <a id= "github"  href="https://github.com/fabyan09" target="_blank">GitHub</a>
+            <a id="discordo">Discord</a>
+            <a id= "instagram" href="https://www.instagram.com/fbrice09/" target="_blank">Instagram</a>
+            <a id="snap">Snapchat</a>
+            <!-- Ajoutez d'autres liens vers vos réseaux sociaux ici -->
+        </div>   
+        <script>
+            const discord = document.getElementById('discordo');
+    
+            // ✅ Change button text on click
+            discord.addEventListener('click', function handleClick() {
+                discord.innerHTML = '<a id="discord">Mon username : fabyan09</a>';
+            });
+
+            const snapchat = document.getElementById('snap');
+    
+            // ✅ Change button text on click
+            snapchat.addEventListener('click', function handleClick() {
+                snapchat.innerHTML = '<a id ="snapchat">Mon snap : fab-rice9</a>';
+            });
+
+            const tel = document.getElementById('tel');
+    
+            // ✅ Change button text on click
+            tel.addEventListener('click', function handleClick() {
+                tel.innerHTML = '<a id ="téléphone">07.77.04.53.11</a>';
+            });
+
+            const mail = document.getElementById('mail');
+    
+            // ✅ Change button text on click
+            mail.addEventListener('click', function handleClick() {
+                mail.innerHTML = '<a id ="gmail">fabricegerbaud06@gmail.com</a>';
+            });
+
+
+        </script>
+<style>
+    .social-links #snapchat:hover{
+        color: #bde606;
+    }
+    .social-links #discord:hover {
+    color: #bf6ff5;
+    }
+
+    .social-links #téléphone:hover {
+    color: #24d5f5;
+    }
+
+    .social-links #gmail:hover {
+    color: #ff5252;
+    }
+
+    .social-links #blabla #realsoft{
+        font-family: Arial, sans-serif;
+        color: #ccc;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .social-links #blabla #IUT{
+        font-family: Arial, sans-serif;
+        color: #ccc;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    .rainbow-text {
+        background-image: linear-gradient(45deg, #f06, #f90, #ff0, #0c6, #09f, #90f, #f09);
+        background-size: 400%;
+        animation: rainbow 4s linear infinite;
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+
+    @keyframes rainbow {
+        0% {
+            background-position: 0% 50%;
+        }
+        100% {
+            background-position: 100% 50%;
+        }
+    }
+
+    .rainbow-text:hover {
+        animation: none;
+        color: #ff6600; /* Couleur au survol */
+    }
+
+</style>     
+    </footer>
+</body>
+</html>
